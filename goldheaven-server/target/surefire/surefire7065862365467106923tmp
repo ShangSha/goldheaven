@@ -1,0 +1,34 @@
+#surefire
+#Wed Jul 02 18:26:54 CST 2014
+testClassesDirectory=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server\\target\\test-classes
+classPathUrl.4=C\:\\Users\\xiu\\.m2\\repository\\org\\apache\\logging\\log4j\\log4j-api\\2.0-rc1\\log4j-api-2.0-rc1.jar
+classPathUrl.3=C\:\\Users\\xiu\\.m2\\repository\\org\\apache\\logging\\log4j\\log4j-core\\2.0-rc1\\log4j-core-2.0-rc1.jar
+classPathUrl.2=C\:\\Users\\xiu\\.m2\\repository\\junit\\junit\\3.8.1\\junit-3.8.1.jar
+useManifestOnlyJar=true
+classPathUrl.1=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server\\target\\classes
+reportsDirectory=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server\\target\\surefire-reports
+classPathUrl.0=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server\\target\\test-classes
+dirscanner.0=directoryScannerOptions
+providerConfiguration=org.apache.maven.surefire.junit.JUnit3Provider
+testSuiteDefinitionTestSourceDirectory=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server\\src\\test\\java
+surefireClassPathUrl.1=C\:\\Users\\xiu\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-api\\2.7.1\\surefire-api-2.7.1.jar
+surefireClassPathUrl.0=C\:\\Users\\xiu\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-junit3\\2.7.1\\surefire-junit3-2.7.1.jar
+report.2=org.apache.maven.surefire.report.XMLReporter
+useSystemClassLoader=true
+report.1=org.apache.maven.surefire.report.BriefFileReporter
+report.0=org.apache.maven.surefire.report.ForkingConsoleReporter
+excludes0=**/*$*
+isTrimStackTrace=true
+dirscanner.0.params=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server\\target\\test-classes|[**/Test*.java, **/*Test.java, **/*TestCase.java]|[**/*$*]
+includes2=**/*TestCase.java
+enableAssertions=true
+includes1=**/*Test.java
+failIfNoTests=false
+includes0=**/Test*.java
+dirscanner.0.types=java.io.File|java.util.ArrayList|java.util.ArrayList
+classPathUrl.9=C\:\\Users\\xiu\\.m2\\repository\\log4j\\log4j\\1.2.17\\log4j-1.2.17.jar
+classPathUrl.8=C\:\\Users\\xiu\\.m2\\repository\\org\\slf4j\\slf4j-log4j12\\1.7.7\\slf4j-log4j12-1.7.7.jar
+classPathUrl.7=C\:\\Users\\xiu\\.m2\\repository\\ch\\qos\\cal10n\\cal10n-api\\0.8.1\\cal10n-api-0.8.1.jar
+childDelegation=false
+classPathUrl.6=C\:\\Users\\xiu\\.m2\\repository\\org\\slf4j\\slf4j-ext\\1.7.7\\slf4j-ext-1.7.7.jar
+classPathUrl.5=C\:\\Users\\xiu\\.m2\\repository\\org\\slf4j\\slf4j-api\\1.7.7\\slf4j-api-1.7.7.jar
