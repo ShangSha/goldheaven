@@ -13,6 +13,13 @@
   <name>goldheaven-manage Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  
+    <dependency>
+      <groupId>com.goldheaven</groupId>
+      <artifactId>goldheaven-core</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
