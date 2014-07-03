@@ -10,6 +10,8 @@
  
 package com.goldheaven.core.dao;
 
+import org.springframework.stereotype.Repository;
+
 import com.goldheaven.core.entity.UserEntity;
 
 /** 
@@ -21,7 +23,7 @@ import com.goldheaven.core.entity.UserEntity;
  * ***************************************************************
  * </p>
  */
-
+@Repository
 public interface IUserDao {
 
 	/**
