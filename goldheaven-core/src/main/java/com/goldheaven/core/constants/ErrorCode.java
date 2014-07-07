@@ -20,6 +20,32 @@ package com.goldheaven.core.constants;
  * </p>
  */
 
-public class ErrConstants {
+public enum ErrorCode {
+	
+	SUCCESS(0, "成功"),
+	
+	ERROR(-1, "失败");
+	
+	private ErrorCode(int errorCode, String errorMsg) {
+		this.errorCode = errorCode;
+		this.errorMsg = errorMsg;
+	}
+
+	/**
+	 * 错误代码
+	 */
+	private int errorCode;
+	/**
+	 * 错误描述
+	 */
+	private String errorMsg;
+
+	public int getErrorCode() {
+		return errorCode;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
 
 }
