@@ -10,17 +10,20 @@
  
 package com.goldheaven.server.web.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.goldheaven.core.entity.UserEntity;
 import com.goldheaven.core.service.IUserService;
+import com.goldheaven.core.util.JsonWrapper;
 
 /** 
  * <p>
  * ************************************************************** 
- * @Description: TODO(这里用一句话描述这个类的作用) 
+ * @Description: TODO(用户控制器) 
  * @AUTHOR zhenqiang.li@xiu.com
  * @DATE 2014-7-3 下午12:25:25 
  * ***************************************************************
@@ -29,6 +32,8 @@ import com.goldheaven.core.service.IUserService;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
+	private static Logger LOG = Logger.getLogger(UserController.class);
 
 	@Autowired
 	private IUserService userService;
@@ -37,6 +42,48 @@ public class UserController {
 	@RequestMapping(value = "test")
 	public String test(Long id) {
 		return userService.getUserById(id).toString();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "save")
+	public JsonWrapper saveUser(UserEntity user) {
+		JsonWrapper json = new JsonWrapper();
+		
+		try {
+			if(!userService.saveUser(user)) {
+				json.setCode(JsonWrapper.ERROR);
+				json.setMsg("保存用户失败！");
+				LOG.error("Save " + user.toString() + " error.");
+			}
+		} catch (Exception e) {
+			json.setCode(JsonWrapper.ERROR);
+			json.setMsg("系统错误！");
+			json.setData(e.toString());
+			LOG.error("Save " + user.toString() + " exception. Cause by " + e.toString());
+		}
+		
+		return json;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "update")
+	public JsonWrapper updateUser(UserEntity user) {
+		JsonWrapper json = new JsonWrapper();
+		
+		try {
+			if(!userService.updateUser(user)) {
+				json.setCode(JsonWrapper.ERROR);
+				json.setMsg("更新用户信息失败！");
+				LOG.error("Update " + user.toString() + " error.");
+			}
+		} catch (Exception e) {
+			json.setCode(JsonWrapper.ERROR);
+			json.setMsg("系统错误！");
+			json.setData(e.toString());
+			LOG.error("Update " + user.toString() + " exception. Cause by " + e.toString());
+		}
+		
+		return json;
 	}
 	
 }
