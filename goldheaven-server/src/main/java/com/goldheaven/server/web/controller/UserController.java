@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.goldheaven.core.constants.ErrorCode;
 import com.goldheaven.core.entity.UserEntity;
 import com.goldheaven.core.service.IUserService;
 import com.goldheaven.core.util.JsonWrapper;
@@ -39,51 +40,43 @@ public class UserController {
 	private IUserService userService;
 	
 	@ResponseBody
-	@RequestMapping(value = "test")
-	public String test(Long id) {
-		return userService.getUserById(id).toString();
-	}
-	
-	@ResponseBody
 	@RequestMapping(value = "save")
 	public JsonWrapper saveUser(UserEntity user) {
-		JsonWrapper json = new JsonWrapper();
+		
+		// 默认成功
+		ErrorCode errorCode = ErrorCode.SUCCESS;
 		
 		try {
 			if(!userService.saveUser(user)) {
-				json.setCode(JsonWrapper.ERROR);
-				json.setMsg("保存用户失败！");
+				errorCode = ErrorCode.ERROR;
 				LOG.error("Save " + user.toString() + " error.");
 			}
 		} catch (Exception e) {
-			json.setCode(JsonWrapper.ERROR);
-			json.setMsg("系统错误！");
-			json.setData(e.toString());
+			errorCode = ErrorCode.ERROR;
 			LOG.error("Save " + user.toString() + " exception. Cause by " + e.toString());
 		}
 		
-		return json;
+		return new JsonWrapper(errorCode);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "update")
 	public JsonWrapper updateUser(UserEntity user) {
-		JsonWrapper json = new JsonWrapper();
+		
+		// 默认成功
+		ErrorCode errorCode = ErrorCode.SUCCESS;
 		
 		try {
 			if(!userService.updateUser(user)) {
-				json.setCode(JsonWrapper.ERROR);
-				json.setMsg("更新用户信息失败！");
+				errorCode = ErrorCode.ERROR;
 				LOG.error("Update " + user.toString() + " error.");
 			}
 		} catch (Exception e) {
-			json.setCode(JsonWrapper.ERROR);
-			json.setMsg("系统错误！");
-			json.setData(e.toString());
+			errorCode = ErrorCode.ERROR;
 			LOG.error("Update " + user.toString() + " exception. Cause by " + e.toString());
 		}
 		
-		return json;
+		return new JsonWrapper(errorCode);
 	}
 	
 }
