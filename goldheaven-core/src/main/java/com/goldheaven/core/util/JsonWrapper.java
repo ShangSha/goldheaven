@@ -2,6 +2,8 @@ package com.goldheaven.core.util;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
 /**
  * 
  * <p>
@@ -83,8 +85,10 @@ public class JsonWrapper implements Serializable {
 	}
 
 	/**
+	 * 为null不序列化
 	 * @return the errorCode
 	 */
+	@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 	public String getErrorCode() {
 		return errorCode;
 	}
@@ -97,8 +101,10 @@ public class JsonWrapper implements Serializable {
 	}
 
 	/**
+	 * 为null不序列化
 	 * @return the data
 	 */
+	@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 	public Object getData() {
 		return data;
 	}
