@@ -6,4 +6,19 @@
 		SELECT * FROM USER WHERE ID = #{id}
 	</select>
 	
+	<insert id="saveUser" parameterType="UserEntity">
+	    INSERT INTO USER (userName)
+	    VALUES (#{userName})
+	</insert>
+	
+	<update id="updateUser" parameterType="UserEntity">
+	    update USER set
+		userName = #{userName}
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteUser" parameterType="java.lang.Long">
+	    DELETE FROM USER WHERE ID = ${id}
+	</delete>
+	
 </mapper>
