@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
+import com.goldheaven.core.constants.ErrorCode;
+
 /**
  * 
  * <p>
@@ -23,16 +25,29 @@ public class JsonWrapper implements Serializable {
 
     private int code;
     private String msg;
-    private String errorCode;
 
     private Object data;
 
+    /**
+     * 默认成功
+     */
     public JsonWrapper() {
-    	this(SUCCESS, "SUCCESS");
+    	this(ErrorCode.SUCCESS, null);
     }
     
-	public JsonWrapper(int code, String msg) {
-		this(code, msg, null, null);
+    /**
+	 * ErrorCode构造器
+	 * @param code
+	 * @param msg
+	 * @param errorCode
+	 * @param data
+	 */
+	public JsonWrapper(ErrorCode errorCode) {
+		this(errorCode, null);
+	}
+
+	public JsonWrapper(ErrorCode errorCode, Object data) {
+		this(errorCode.getErrorCode(), errorCode.getErrorMsg(), data);
 	}
 
 	/**
@@ -42,18 +57,25 @@ public class JsonWrapper implements Serializable {
 	 * @param errorCode
 	 * @param data
 	 */
-	public JsonWrapper(int code, String msg, String errorCode, Object data) {
+	public JsonWrapper(int code, String msg, Object data) {
 		super();
 		this.code = code;
 		this.msg = msg;
-		this.errorCode = errorCode;
 		this.data = data;
 	}
-
+	
+	/**
+	 * 设置errorCode
+	 * @param errorCode
+	 */
+	public void setErrorCode(ErrorCode errorCode) {
+		this.setCode(errorCode.getErrorCode());
+		this.setMsg(errorCode.getErrorMsg());
+	}
+	
 	@Override
 	public String toString() {
-		return "JsonWrapper [code=" + code + ", msg=" + msg + ", errorCode="
-				+ errorCode + ", data=" + data + "]";
+		return "JsonWrapper [code=" + code + ", msg=" + msg + ", data=" + data + "]";
 	}
 
 	/**
@@ -86,22 +108,6 @@ public class JsonWrapper implements Serializable {
 
 	/**
 	 * 为null不序列化
-	 * @return the errorCode
-	 */
-	@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-	public String getErrorCode() {
-		return errorCode;
-	}
-
-	/**
-	 * @param errorCode the errorCode to set
-	 */
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	/**
-	 * 为null不序列化
 	 * @return the data
 	 */
 	@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
@@ -115,5 +121,5 @@ public class JsonWrapper implements Serializable {
 	public void setData(Object data) {
 		this.data = data;
 	}
-	
+
 }
