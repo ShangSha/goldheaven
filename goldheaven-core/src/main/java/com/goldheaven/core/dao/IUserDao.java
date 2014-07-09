@@ -10,6 +10,8 @@
  
 package com.goldheaven.core.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.goldheaven.core.entity.UserEntity;
@@ -32,6 +34,12 @@ public interface IUserDao {
 	 * @return
 	 */
 	UserEntity getUserById(Long id);
+	
+	/**
+	 * 条件查询用户列表
+	 * @return
+	 */
+	List<UserEntity> getUserList();
 	
 	/**
 	 * 保存用户
