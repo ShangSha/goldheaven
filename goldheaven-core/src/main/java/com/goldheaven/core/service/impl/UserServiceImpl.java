@@ -10,6 +10,8 @@
  
 package com.goldheaven.core.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +40,11 @@ public class UserServiceImpl implements IUserService {
 	public UserEntity getUserById(Long id) {
 		return userDao.getUserById(id);
 	}
+	
+	@Override
+	public List<UserEntity> getUserList() {
+		return null;
+	}
 
 	@Override
 	public boolean saveUser(UserEntity user) {
@@ -53,5 +60,5 @@ public class UserServiceImpl implements IUserService {
 	public boolean deleteUser(Long id) {
 		return userDao.deleteUser(id) > 0;
 	}
-	
+
 }

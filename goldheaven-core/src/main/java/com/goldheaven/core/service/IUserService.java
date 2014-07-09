@@ -10,6 +10,8 @@
  
 package com.goldheaven.core.service;
 
+import java.util.List;
+
 import com.goldheaven.core.entity.UserEntity;
 
 /** 
@@ -30,6 +32,9 @@ public interface IUserService {
 	 * @return
 	 */
 	UserEntity getUserById(Long id);
+	
+	
+	List<UserEntity> getUserList();
 	
 	/**
 	 * 保存用户信息
