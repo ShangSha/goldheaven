@@ -10,6 +10,8 @@
  
 package com.goldheaven.manage.service;
 
+import com.goldheaven.manage.entity.AdminEntity;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -21,5 +23,11 @@ package com.goldheaven.manage.service;
  */
 
 public interface IAdminService {
+	
+	/**
+	 * 通过用户名和密码获取用户
+	 * @return
+	 */
+	AdminEntity getUserByNameAndPW(String userName, String passWord);
 
 }
