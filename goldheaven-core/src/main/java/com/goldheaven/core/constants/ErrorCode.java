@@ -23,8 +23,9 @@ package com.goldheaven.core.constants;
 public enum ErrorCode {
 	
 	SUCCESS(0, "成功"),
+	ERROR(-1, "失败"),
 	
-	ERROR(-1, "失败");
+	LOGINFAIL(1001, "用户名或密码错误");
 	
 	private ErrorCode(int errorCode, String errorMsg) {
 		this.errorCode = errorCode;
