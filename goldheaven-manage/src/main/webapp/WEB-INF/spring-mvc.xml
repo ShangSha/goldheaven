@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
-	<!-- Scans the classpath of this application for @Components to deploy as beans -->
+	<!-- Scans the classpath of this application for @Components to deploy as 
+		beans -->
 	<context:component-scan base-package="com.goldheaven.manage.web" />
-	
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
-	
+
 	<mvc:annotation-driven />
-	<bean class="com.goldheaven.manage.framework.modules.spring.util.SpringContextHolder"/>
-	
-	<bean id="propertyConfigurer" class="com.goldheaven.manage.framework.modules.spring.extend.ExtendedPropertyPlaceholderConfigurer">
+	<bean class="com.goldheaven.manage.framework.modules.spring.util.SpringContextHolder" />
+
+	<bean id="propertyConfigurer"
+		class="com.goldheaven.manage.framework.modules.spring.extend.ExtendedPropertyPlaceholderConfigurer">
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
 		<property name="ignoreResourceNotFound" value="true" />
 		<property name="locations">
@@ -26,31 +28,43 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- 拦截器 -->
-	<mvc:interceptors>
-	    <!-- 登录拦截器 -->
-		<bean id="authInterceptor" class="com.goldheaven.manage.web.interceptor.AuthInterceptor"/>
-	</mvc:interceptors>
-	
-	<!-- 将无法mapping到Controller的path交给default servlet handler处理 -->
-	<mvc:default-servlet-handler />
-	
+	<!--<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+			<property name="cacheSeconds" value="0" />
+			<property name="useExpiresHeader" value="true" />
+			<property name="useCacheControlHeader" value="true" />
+			<property name="useCacheControlNoStore" value="true" />
+			<property name="alwaysUseFullPath" value="true" />
+			<property name="cacheMappings">
+				<props>
+					<prop key="/resources/**">0</prop>
+					<prop key="/script/constants.js">0</prop>
+					<prop key="/**">0</prop>
+				</props>
+			</property>
+		</bean> -->
+		<!-- 登录拦截器 
+		<bean id="authInterceptor" class="com.goldheaven.manage.web.interceptor.AuthInterceptor" />
+	    
+	</mvc:interceptors>-->
+
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean id="localeResolver"
-		class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver" />
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver" />
 
-	
+
 	<bean id="defaultExceptionResolver"
 		class="org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver">
-		<property name="order" value="0" />		
+		<property name="order" value="0" />
 	</bean>
-	 
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> 
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
 </beans>
  
