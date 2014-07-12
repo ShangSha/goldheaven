@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.goldheaven.core.dao.IUserDao">
 	
-	<select id="getUserById" resultType="UserEntity" parameterType="java.lang.Long">
+	<select id="getUserById" resultType="UserInfo" parameterType="java.lang.Long">
 		SELECT * FROM USER WHERE ID = #{id}
 	</select>
 	
-	<insert id="saveUser" parameterType="UserEntity">
+	<insert id="saveUser" parameterType="UserInfo">
 	    INSERT INTO USER (userName)
 	    VALUES (#{userName})
 	</insert>
 	
-	<update id="updateUser" parameterType="UserEntity">
+	<update id="updateUser" parameterType="UserInfo">
 	    update USER set
 		userName = #{userName}
 		where id = #{id}

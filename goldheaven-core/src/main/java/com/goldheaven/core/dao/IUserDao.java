@@ -14,7 +14,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.goldheaven.core.entity.UserEntity;
+import com.goldheaven.core.entity.UserInfo;
 
 /** 
  * <p>
@@ -33,27 +33,27 @@ public interface IUserDao {
 	 * @param id
 	 * @return
 	 */
-	UserEntity getUserById(Long id);
+	UserInfo getUserById(Long id);
 	
 	/**
 	 * 条件查询用户列表
 	 * @return
 	 */
-	List<UserEntity> getUserList();
+	List<UserInfo> getUserList();
 	
 	/**
 	 * 保存用户
 	 * @param user
 	 * @return
 	 */
-	Integer saveUser(UserEntity user);
+	Integer saveUser(UserInfo user);
 	
 	/**
 	 * 更新用户
 	 * @param user
 	 * @return
 	 */
-	Integer updateUser(UserEntity user);
+	Integer updateUser(UserInfo user);
 	
 	/**
 	 * 删除用户
