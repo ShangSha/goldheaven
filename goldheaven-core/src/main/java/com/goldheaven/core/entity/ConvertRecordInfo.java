@@ -30,7 +30,7 @@ public class ConvertRecordInfo implements Serializable {
 	/**
 	 * 兑换方式
 	 */
-	private String convertType;
+	private Integer convertType;
 	
 	/**
 	 * 兑换金额
@@ -43,14 +43,19 @@ public class ConvertRecordInfo implements Serializable {
 	private Date convertTime;
 	
 	/**
+	 * 审核状态
+	 */
+	private Integer status;
+	
+	/**
+	 * 审核时间
+	 */
+	private Date reviewTime;
+	
+	/**
 	 * 兑换用户
 	 */
 	private UserInfo user;
-	
-	/**
-	 * 审核记录
-	 */
-	private ReviewRecordInfo reviewRecord;
 	
 	@Override
 	public int hashCode() {
@@ -93,11 +98,11 @@ public class ConvertRecordInfo implements Serializable {
 		this.convertGoldcoin = convertGoldcoin;
 	}
 
-	public String getConvertType() {
+	public Integer getConvertType() {
 		return convertType;
 	}
 
-	public void setConvertType(String convertType) {
+	public void setConvertType(Integer convertType) {
 		this.convertType = convertType;
 	}
 
@@ -107,6 +112,14 @@ public class ConvertRecordInfo implements Serializable {
 
 	public void setConvertMoney(Double convertMoney) {
 		this.convertMoney = convertMoney;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 	public Date getConvertTime() {
@@ -125,19 +138,20 @@ public class ConvertRecordInfo implements Serializable {
 		this.user = user;
 	}
 
-	public ReviewRecordInfo getReviewRecord() {
-		return reviewRecord;
+	public Date getReviewTime() {
+		return reviewTime;
 	}
 
-	public void setReviewRecord(ReviewRecordInfo reviewRecord) {
-		this.reviewRecord = reviewRecord;
+	public void setReviewTime(Date reviewTime) {
+		this.reviewTime = reviewTime;
 	}
 
 	@Override
 	public String toString() {
-		return "ConvertRecordInfo [id=" + id + ", convertGoldcoin=" + convertGoldcoin + 
-				", convertType=" + convertType + ", convertMoney=" + convertMoney + ", convertTime="
-				+ convertTime + ", user=" + user + ", reviewRecord=" + reviewRecord + "]";
+		return "ConvertRecordInfo [id=" + id + ", convertGoldcoin=" + convertGoldcoin + ", convertType=" 
+	              + convertType + ", convertMoney=" + convertMoney + ", convertTime=" + convertTime 
+	              + ", status=" + status + ", reviewTime=" + reviewTime + ", user=" + user + "]";
 	}
+
 
 }
