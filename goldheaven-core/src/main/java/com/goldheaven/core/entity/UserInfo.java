@@ -29,7 +29,7 @@ public class UserInfo implements Serializable {
 	/**
 	 * 电话号码
 	 */
-	private Integer telePhone;
+	private String telePhone;
 	
 	/**
 	 * 支付宝账号
@@ -77,11 +77,11 @@ public class UserInfo implements Serializable {
 		this.userName = userName;
 	}
 
-	public Integer getTelePhone() {
+	public String getTelePhone() {
 		return telePhone;
 	}
 
-	public void setTelePhone(Integer telePhone) {
+	public void setTelePhone(String telePhone) {
 		this.telePhone = telePhone;
 	}
 
