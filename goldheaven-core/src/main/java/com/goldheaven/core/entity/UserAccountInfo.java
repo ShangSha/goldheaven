@@ -24,12 +24,12 @@ public class UserAccountInfo implements Serializable {
 	/**
 	 * 账户总金币
 	 */
-	private Long totalGoldcoin;
+	private Integer totalGoldcoin;
 	
 	/**
 	 * 可兑换金币
 	 */
-	private Long freeGoldcoin;
+	private Integer freeGoldcoin;
 	
 	/**
 	 * 已支付金额
@@ -74,19 +74,19 @@ public class UserAccountInfo implements Serializable {
 		this.id = id;
 	}
 
-	public Long getTotalGoldcoin() {
+	public Integer getTotalGoldcoin() {
 		return totalGoldcoin;
 	}
 
-	public void setTotalGoldcoin(Long totalGoldcoin) {
+	public void setTotalGoldcoin(Integer totalGoldcoin) {
 		this.totalGoldcoin = totalGoldcoin;
 	}
 
-	public Long getFreeGoldcoin() {
+	public Integer getFreeGoldcoin() {
 		return freeGoldcoin;
 	}
 
-	public void setFreeGoldcoin(Long freeGoldcoin) {
+	public void setFreeGoldcoin(Integer freeGoldcoin) {
 		this.freeGoldcoin = freeGoldcoin;
 	}
 

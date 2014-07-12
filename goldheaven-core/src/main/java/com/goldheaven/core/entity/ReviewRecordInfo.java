@@ -41,7 +41,7 @@ public class ReviewRecordInfo implements Serializable {
 	/**
 	 * 兑换记录
 	 */
-	private ConvertRecordInfo drawRecord;
+	private ConvertRecordInfo covertRecord;
 
 	@Override
 	public int hashCode() {
@@ -100,12 +100,19 @@ public class ReviewRecordInfo implements Serializable {
 		this.reviewTime = reviewTime;
 	}
 
-	public ConvertRecordInfo getDrawRecord() {
-		return drawRecord;
+	public ConvertRecordInfo getCovertRecord() {
+		return covertRecord;
 	}
 
-	public void setDrawRecord(ConvertRecordInfo drawRecord) {
-		this.drawRecord = drawRecord;
+	public void setCovertRecord(ConvertRecordInfo covertRecord) {
+		this.covertRecord = covertRecord;
 	}
+
+	@Override
+	public String toString() {
+		return "ReviewRecordInfo [id=" + id + ", reviewPerson=" + reviewPerson + ", message=" + message 
+				+ ", reviewTime=" + reviewTime + ", covertRecord=" + covertRecord + "]";
+	}
+	
 	
 }

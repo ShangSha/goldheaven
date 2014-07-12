@@ -35,7 +35,7 @@ public class OrderInfo implements Serializable {
 	/**
 	 * 渠道号
 	 */
-	private String channelId;
+	private Integer channelId;
 	
 	/**
 	 * 获取的积分
@@ -112,11 +112,11 @@ public class OrderInfo implements Serializable {
 		this.adName = adName;
 	}
 
-	public String getChannelId() {
+	public Integer getChannelId() {
 		return channelId;
 	}
 
-	public void setChannelId(String channelId) {
+	public void setChannelId(Integer channelId) {
 		this.channelId = channelId;
 	}
 
