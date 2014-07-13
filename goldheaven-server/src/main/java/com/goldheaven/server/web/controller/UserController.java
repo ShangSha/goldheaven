@@ -16,8 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.goldheaven.core.constants.ErrorCode;
-import com.goldheaven.core.entity.UserEntity;
+import com.goldheaven.core.constants.enums.ErrorCode;
+import com.goldheaven.core.entity.UserInfo;
 import com.goldheaven.core.service.IUserService;
 import com.goldheaven.core.util.JsonWrapper;
 
@@ -41,7 +41,7 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping(value = "save")
-	public JsonWrapper saveUser(UserEntity user) {
+	public JsonWrapper saveUser(UserInfo user) {
 		
 		// 默认成功
 		ErrorCode errorCode = ErrorCode.SUCCESS;
@@ -61,7 +61,7 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping(value = "update")
-	public JsonWrapper updateUser(UserEntity user) {
+	public JsonWrapper updateUser(UserInfo user) {
 		
 		// 默认成功
 		ErrorCode errorCode = ErrorCode.SUCCESS;
