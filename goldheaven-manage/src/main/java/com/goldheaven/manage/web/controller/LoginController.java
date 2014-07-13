@@ -18,9 +18,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.goldheaven.core.constants.ErrorCode;
+import com.goldheaven.core.constants.enums.ErrorCode;
 import com.goldheaven.core.util.JsonWrapper;
-import com.goldheaven.manage.entity.AdminEntity;
+import com.goldheaven.manage.entity.AdminInfo;
 import com.goldheaven.manage.service.IAdminService;
 
 /** 
@@ -49,7 +49,7 @@ public class LoginController {
 		ErrorCode errorCode = ErrorCode.LOGINFAIL;
 		
 		try {
-			AdminEntity admin = adminService.getUserByNameAndPW(userName, passWord);
+			AdminInfo admin = adminService.getAdminByNameAndPW(userName, passWord);
 			
 			if(admin != null) { 
 				// 存入session中
