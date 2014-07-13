@@ -1,6 +1,7 @@
 package com.goldheaven.core.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 
@@ -35,6 +36,11 @@ public class UserInfo implements Serializable {
 	 * 支付宝账号
 	 */
 	private String alipayAccount;
+	
+	/**
+	 * 注册时间
+	 */
+	private Date createTime;
 
 	@Override
 	public int hashCode() {
@@ -93,10 +99,18 @@ public class UserInfo implements Serializable {
 		this.alipayAccount = alipayAccount;
 	}
 
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
 	@Override
 	public String toString() {
-		return "UserInfo [id=" + id + ", userName=" + userName + ", telePhone="
-				+ telePhone + ", alipayAccount=" + alipayAccount + "]";
+		return "UserInfo [id=" + id + ", userName=" + userName + ", telePhone=" + telePhone 
+				+ ", alipayAccount=" + alipayAccount + ", createTime=" + createTime + "]";
 	}
 
 }
