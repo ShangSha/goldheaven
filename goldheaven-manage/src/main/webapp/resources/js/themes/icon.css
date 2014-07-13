@@ -52,6 +52,10 @@
 .icon-tip{
 	background:url('icons/tip.png') no-repeat center center;
 }
+.icon-filter{
+	background:url('icons/filter.png') no-repeat center center;
+}
+
 
 .icon-mini-add{
 	background:url('icons/mini_add.png') no-repeat center center;
@@ -62,21 +66,19 @@
 .icon-mini-refresh{
 	background:url('icons/mini_refresh.png') no-repeat center center;
 }
-.icon-sy{
-	background:url('icons/directory.png') no-repeat center center;
+
+.icon-large-picture{
+	background:url('icons/large_picture.png') no-repeat center center;
 }
-.icon-sys{
-	background:url('icons/s.jpg') no-repeat center center;
+.icon-large-clipart{
+	background:url('icons/large_clipart.png') no-repeat center center;
 }
-.icon-zhuye{padding:2px 9px; background:url(icons/zhuye.png) no-repeat; } 
-.icon{padding:2px 9px; background:url(icons/tabicons.png) no-repeat; } 
-
-
-
- .icon-quyu{background-position: -156px 0px;}
-.icon-zu{background-position: -118px 0px;}
-.icon-fuwu{background-position: -98px -180px;}
-.icon-tianjia{background-position: -19px 0px;}
-.icon-yinyongliebiao{background-position: -178px -18px;}
-.icon-yinyong{background-position: -31px -78px;}
-/*.icon-log{background-position: -380px -80px;}  */
+.icon-large-shapes{
+	background:url('icons/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('icons/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('icons/large_chart.png') no-repeat center center;
+}
