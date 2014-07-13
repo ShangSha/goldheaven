@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.goldheaven.core.dao.IUserDao;
-import com.goldheaven.core.entity.UserEntity;
+import com.goldheaven.core.entity.UserInfo;
 import com.goldheaven.core.service.IUserService;
 
 /** 
@@ -37,22 +37,27 @@ public class UserServiceImpl implements IUserService {
 	private IUserDao userDao;
 	
 	@Override
-	public UserEntity getUserById(Long id) {
+	public UserInfo getUserById(Long id) {
 		return userDao.getUserById(id);
 	}
 	
 	@Override
-	public List<UserEntity> getUserList() {
-		return null;
+	public List<UserInfo> getUserListByParam() {
+		return userDao.getUserListByParam();
+	}
+	
+	@Override
+	public Integer getUserNumByParam() {
+		return userDao.getUserNumByParam();
 	}
 
 	@Override
-	public boolean saveUser(UserEntity user) {
+	public boolean saveUser(UserInfo user) {
 		return userDao.saveUser(user) > 0;
 	}
 
 	@Override
-	public boolean updateUser(UserEntity user) {
+	public boolean updateUser(UserInfo user) {
 		return userDao.updateUser(user) > 0;
 	}
 
