@@ -49,6 +49,8 @@
 		<bean id="authInterceptor" class="com.goldheaven.manage.web.interceptor.AuthInterceptor" />
 	    
 	</mvc:interceptors>-->
+	
+	<mvc:default-servlet-handler/>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
