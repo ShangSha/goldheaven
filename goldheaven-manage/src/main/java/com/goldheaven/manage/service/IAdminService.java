@@ -10,7 +10,9 @@
  
 package com.goldheaven.manage.service;
 
-import com.goldheaven.manage.entity.AdminEntity;
+import java.util.List;
+
+import com.goldheaven.manage.entity.AdminInfo;
 
 /** 
  * <p>
@@ -28,6 +30,34 @@ public interface IAdminService {
 	 * 通过用户名和密码获取用户
 	 * @return
 	 */
-	AdminEntity getUserByNameAndPW(String userName, String passWord);
+	AdminInfo getAdminByNameAndPW(String userName, String passWord);
+	
+	/**
+	 * 获取管理员列表（分页）
+	 * @param pageNo
+	 * @param pageSize
+	 * @return
+	 */
+	List<AdminInfo> getAdminList(Integer pageNo, Integer pageSize);
+	
+	/**
+	 * 获取管理员记录总数
+	 * @return
+	 */
+	Integer getAdminNum();
+	
+	/**
+	 * 保存用户
+	 * @param admin
+	 * @return
+	 */
+	boolean saveAdmin(AdminInfo admin);
+	
+	/**
+	 * 通过ID删除用户
+	 * @param id
+	 * @return
+	 */
+	boolean deleteAdmin(Long id);
 
 }
