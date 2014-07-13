@@ -10,20 +10,23 @@
  
 package com.goldheaven.manage.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /** 
  * <p>
  * ************************************************************** 
- * @Description: TODO(这里用一句话描述这个类的作用) 
+ * @Description: TODO(管理员信息) 
  * @AUTHOR zhenqiang.li@xiu.com
  * @DATE 2014-7-9 下午5:59:14 
  * ***************************************************************
  * </p>
  */
 
-public class AdminEntity {
+public class AdminInfo implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * 管理员ID
 	 */
@@ -60,7 +63,7 @@ public class AdminEntity {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AdminEntity other = (AdminEntity) obj;
+		AdminInfo other = (AdminInfo) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -123,6 +126,11 @@ public class AdminEntity {
 	 */
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+
+	@Override
+	public String toString() {
+		return "AdminInfo [id=" + id + ", userName=" + userName + ", createTime=" + createTime + "]";
 	}
 
 }
