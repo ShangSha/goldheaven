@@ -8,7 +8,7 @@
  * </p>
  */
  
-package com.goldheaven.core.constants;
+package com.goldheaven.core.constants.enums;
 
 /** 
  * <p>
@@ -22,10 +22,14 @@ package com.goldheaven.core.constants;
 
 public enum ErrorCode {
 	
-	SUCCESS(0, "成功"),
-	ERROR(-1, "失败"),
+	SUCCESS                      (0, "成功"),
+	ERROR                        (-1, "失败"),
 	
-	LOGINFAIL(1001, "用户名或密码错误");
+	/**
+	 * 10开头为用户中心错误
+	 */
+	LOGINFAIL                    (1001, "用户名或密码错误"),
+	PASSWORD_TWICE_DIFFER        (1002, "两次密码输入不一致");
 	
 	private ErrorCode(int errorCode, String errorMsg) {
 		this.errorCode = errorCode;

@@ -8,7 +8,7 @@
  * </p>
  */
  
-package com.goldheaven.core.constants;
+package com.goldheaven.core.constants.enums;
 
 /** 
  * <p>
