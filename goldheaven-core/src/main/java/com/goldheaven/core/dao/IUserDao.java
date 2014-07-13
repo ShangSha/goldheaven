@@ -36,10 +36,16 @@ public interface IUserDao {
 	UserInfo getUserById(Long id);
 	
 	/**
-	 * 条件查询用户列表
+	 * 条件查询用户列表（分页）
 	 * @return
 	 */
-	List<UserInfo> getUserList();
+	List<UserInfo> getUserListByParam();
+	
+	/**
+	 * 条件查询用户总数
+	 * @return
+	 */
+	Integer getUserNumByParam();
 	
 	/**
 	 * 保存用户

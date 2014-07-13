@@ -6,6 +6,14 @@
 		SELECT * FROM USER WHERE ID = #{id}
 	</select>
 	
+	<select id="getUserListByParam" resultType="UserInfo">
+	    select * from user
+	</select>
+	
+	<select id="getUserNumByParam" resultType="int">
+	    select count(id) from user
+	</select>
+	
 	<insert id="saveUser" parameterType="UserInfo">
 	    INSERT INTO USER (userName)
 	    VALUES (#{userName})
