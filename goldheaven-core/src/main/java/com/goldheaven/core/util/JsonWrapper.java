@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
-import com.goldheaven.core.constants.ErrorCode;
+import com.goldheaven.core.constants.enums.ErrorCode;
 
 /**
  * 
