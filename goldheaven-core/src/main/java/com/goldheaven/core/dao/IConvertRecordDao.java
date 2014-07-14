@@ -1,5 +1,7 @@
 package com.goldheaven.core.dao;
 
+import org.springframework.stereotype.Repository;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -9,6 +11,7 @@ package com.goldheaven.core.dao;
  * ***************************************************************
  * </p>
  */
+@Repository
 public interface IConvertRecordDao {
 
 }
