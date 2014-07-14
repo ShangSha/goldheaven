@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.goldheaven.core.constants.enums.ErrorCode;
+import com.goldheaven.core.entity.AdminInfo;
+import com.goldheaven.core.service.IAdminService;
 import com.goldheaven.core.util.JsonWrapper;
-import com.goldheaven.manage.entity.AdminInfo;
-import com.goldheaven.manage.service.IAdminService;
+import com.goldheaven.core.util.Page;
 import com.goldheaven.manage.web.vo.EasyUIVo;
 
 /** 
@@ -44,8 +45,8 @@ public class AdminController {
 	
 	@ResponseBody
 	@RequestMapping(value = "list")
-	public EasyUIVo<AdminInfo> list(Integer page, Integer pageSize) {
-		List<AdminInfo> list = adminService.getAdminList(page, pageSize);
+	public EasyUIVo<AdminInfo> list(Page page) {
+		List<AdminInfo> list = adminService.getAdminList(page);
 		int total = adminService.getAdminNum();
 		return new EasyUIVo<AdminInfo>(list, total);
 	}
