@@ -37,9 +37,9 @@ public class UserAccountInfo implements Serializable {
 	private Double paidMoney;
 	
 	/**
-	 * 所属用户
+	 * 所属用户ID
 	 */
-	private UserInfo user;
+	private Long userId;
 	
 	@Override
 	public int hashCode() {
@@ -66,50 +66,81 @@ public class UserAccountInfo implements Serializable {
 		return true;
 	}
 
+	/**
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return the totalGoldcoin
+	 */
 	public Integer getTotalGoldcoin() {
 		return totalGoldcoin;
 	}
 
+	/**
+	 * @param totalGoldcoin the totalGoldcoin to set
+	 */
 	public void setTotalGoldcoin(Integer totalGoldcoin) {
 		this.totalGoldcoin = totalGoldcoin;
 	}
 
+	/**
+	 * @return the freeGoldcoin
+	 */
 	public Integer getFreeGoldcoin() {
 		return freeGoldcoin;
 	}
 
+	/**
+	 * @param freeGoldcoin the freeGoldcoin to set
+	 */
 	public void setFreeGoldcoin(Integer freeGoldcoin) {
 		this.freeGoldcoin = freeGoldcoin;
 	}
 
+	/**
+	 * @return the paidMoney
+	 */
 	public Double getPaidMoney() {
 		return paidMoney;
 	}
 
+	/**
+	 * @param paidMoney the paidMoney to set
+	 */
 	public void setPaidMoney(Double paidMoney) {
 		this.paidMoney = paidMoney;
 	}
 
-	public UserInfo getUser() {
-		return user;
+	/**
+	 * @return the userId
+	 */
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setUser(UserInfo user) {
-		this.user = user;
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	@Override
 	public String toString() {
-		return "UserAccountInfo [id=" + id + ", totalGoldcoin=" + totalGoldcoin + ", freeGoldcoin=" 
-	              + freeGoldcoin + ", paidMoney=" + paidMoney + ", user=" + user + "]";
+		return "UserAccountInfo [id=" + id + ", totalGoldcoin=" + totalGoldcoin
+				+ ", freeGoldcoin=" + freeGoldcoin + ", paidMoney=" + paidMoney
+				+ ", userId=" + userId + "]";
 	}
 
 }

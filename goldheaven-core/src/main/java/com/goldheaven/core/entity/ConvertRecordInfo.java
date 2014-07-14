@@ -55,7 +55,7 @@ public class ConvertRecordInfo implements Serializable {
 	/**
 	 * 兑换用户
 	 */
-	private UserInfo user;
+	private Long userId;
 	
 	@Override
 	public int hashCode() {
@@ -82,76 +82,124 @@ public class ConvertRecordInfo implements Serializable {
 		return true;
 	}
 
+	/**
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return the convertGoldcoin
+	 */
 	public Long getConvertGoldcoin() {
 		return convertGoldcoin;
 	}
 
+	/**
+	 * @param convertGoldcoin the convertGoldcoin to set
+	 */
 	public void setConvertGoldcoin(Long convertGoldcoin) {
 		this.convertGoldcoin = convertGoldcoin;
 	}
 
+	/**
+	 * @return the convertType
+	 */
 	public Integer getConvertType() {
 		return convertType;
 	}
 
+	/**
+	 * @param convertType the convertType to set
+	 */
 	public void setConvertType(Integer convertType) {
 		this.convertType = convertType;
 	}
 
+	/**
+	 * @return the convertMoney
+	 */
 	public Double getConvertMoney() {
 		return convertMoney;
 	}
 
+	/**
+	 * @param convertMoney the convertMoney to set
+	 */
 	public void setConvertMoney(Double convertMoney) {
 		this.convertMoney = convertMoney;
 	}
 
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
+	/**
+	 * @return the convertTime
+	 */
 	public Date getConvertTime() {
 		return convertTime;
 	}
 
+	/**
+	 * @param convertTime the convertTime to set
+	 */
 	public void setConvertTime(Date convertTime) {
 		this.convertTime = convertTime;
 	}
 
-	public UserInfo getUser() {
-		return user;
+	/**
+	 * @return the status
+	 */
+	public Integer getStatus() {
+		return status;
 	}
 
-	public void setUser(UserInfo user) {
-		this.user = user;
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
+	/**
+	 * @return the reviewTime
+	 */
 	public Date getReviewTime() {
 		return reviewTime;
 	}
 
+	/**
+	 * @param reviewTime the reviewTime to set
+	 */
 	public void setReviewTime(Date reviewTime) {
 		this.reviewTime = reviewTime;
 	}
 
-	@Override
-	public String toString() {
-		return "ConvertRecordInfo [id=" + id + ", convertGoldcoin=" + convertGoldcoin + ", convertType=" 
-	              + convertType + ", convertMoney=" + convertMoney + ", convertTime=" + convertTime 
-	              + ", status=" + status + ", reviewTime=" + reviewTime + ", user=" + user + "]";
+	/**
+	 * @return the userId
+	 */
+	public Long getUserId() {
+		return userId;
 	}
 
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 
+	@Override
+	public String toString() {
+		return "ConvertRecordInfo [id=" + id + ", convertGoldcoin=" + convertGoldcoin 
+				+ ", convertType=" + convertType + ", convertMoney=" + convertMoney 
+				+ ", convertTime=" + convertTime + ", status=" + status + ", reviewTime="
+				+ reviewTime + ", userId=" + userId + "]";
+	}
+	
 }

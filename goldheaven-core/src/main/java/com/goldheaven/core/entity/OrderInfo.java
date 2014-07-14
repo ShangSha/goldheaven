@@ -25,7 +25,7 @@ public class OrderInfo implements Serializable {
 	/**
 	 * 订单ID
 	 */
-	private String orderID;
+	private String orderId;
 	
 	/**
 	 * 广告名称
@@ -53,16 +53,16 @@ public class OrderInfo implements Serializable {
 	private Date time;
 	
 	/**
-	 * 用户
+	 * 用户ID
 	 */
-	private UserInfo user;
+	private Long userId;
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((orderID == null) ? 0 : orderID.hashCode());
+		result = prime * result + ((orderId == null) ? 0 : orderId.hashCode());
 		return result;
 	}
 
@@ -80,83 +80,132 @@ public class OrderInfo implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (orderID == null) {
-			if (other.orderID != null)
+		if (orderId == null) {
+			if (other.orderId != null)
 				return false;
-		} else if (!orderID.equals(other.orderID))
+		} else if (!orderId.equals(other.orderId))
 			return false;
 		return true;
 	}
 
+	/**
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getOrderID() {
-		return orderID;
+	/**
+	 * @return the orderId
+	 */
+	public String getOrderId() {
+		return orderId;
 	}
 
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+	/**
+	 * @param orderId the orderId to set
+	 */
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
+	/**
+	 * @return the adName
+	 */
 	public String getAdName() {
 		return adName;
 	}
 
+	/**
+	 * @param adName the adName to set
+	 */
 	public void setAdName(String adName) {
 		this.adName = adName;
 	}
 
+	/**
+	 * @return the channelId
+	 */
 	public Integer getChannelId() {
 		return channelId;
 	}
 
+	/**
+	 * @param channelId the channelId to set
+	 */
 	public void setChannelId(Integer channelId) {
 		this.channelId = channelId;
 	}
 
+	/**
+	 * @return the goldcoins
+	 */
 	public Integer getGoldcoins() {
 		return goldcoins;
 	}
 
+	/**
+	 * @param goldcoins the goldcoins to set
+	 */
 	public void setGoldcoins(Integer goldcoins) {
 		this.goldcoins = goldcoins;
 	}
 
+	/**
+	 * @return the deviceId
+	 */
 	public String getDeviceId() {
 		return deviceId;
 	}
 
+	/**
+	 * @param deviceId the deviceId to set
+	 */
 	public void setDeviceId(String deviceId) {
 		this.deviceId = deviceId;
 	}
 
+	/**
+	 * @return the time
+	 */
 	public Date getTime() {
 		return time;
 	}
 
+	/**
+	 * @param time the time to set
+	 */
 	public void setTime(Date time) {
 		this.time = time;
 	}
 
-	public UserInfo getUser() {
-		return user;
+	/**
+	 * @return the userId
+	 */
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setUser(UserInfo user) {
-		this.user = user;
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	@Override
 	public String toString() {
-		return "OrderInfo [id=" + id + ", orderID=" + orderID + ", adName=" + adName + 
-				", channelId=" + channelId + ", goldcoins=" + goldcoins + ", deviceId=" + deviceId 
-				+ ", time=" + time + ", user=" + user + "]";
+		return "OrderInfo [id=" + id + ", orderId=" + orderId + ", adName="
+				+ adName + ", channelId=" + channelId + ", goldcoins="
+				+ goldcoins + ", deviceId=" + deviceId + ", time=" + time
+				+ ", userId=" + userId + "]";
 	}
-
+	
 }
