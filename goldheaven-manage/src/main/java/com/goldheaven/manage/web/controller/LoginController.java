@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.goldheaven.core.constants.enums.ErrorCode;
+import com.goldheaven.core.entity.AdminInfo;
+import com.goldheaven.core.service.IAdminService;
 import com.goldheaven.core.util.JsonWrapper;
-import com.goldheaven.manage.entity.AdminInfo;
-import com.goldheaven.manage.service.IAdminService;
 
 /** 
  * <p>
