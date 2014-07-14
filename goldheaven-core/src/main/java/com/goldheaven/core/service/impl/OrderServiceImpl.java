@@ -1,8 +1,11 @@
 package com.goldheaven.core.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.goldheaven.core.dao.IOrderDao;
+import com.goldheaven.core.entity.OrderInfo;
 import com.goldheaven.core.service.IOrderService;
 
 /** 
@@ -19,5 +22,18 @@ import com.goldheaven.core.service.IOrderService;
 @Service("orderService")
 public class OrderServiceImpl implements IOrderService {
 	
+	@Autowired
+	private IOrderDao orderDao;
+	
+	@Override
+	public int saveOrder(OrderInfo order) {
+		
+		// 判断订单是否存在
+		if(orderDao.isOrderExist(order.getOrderId(), order.getChannelId()) > 0) {
+			return 0;
+		}
+		
+		return orderDao.saveOrder(order) > 0 ? 1 : 2;
+	}
 
 }
