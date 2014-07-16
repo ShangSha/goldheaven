@@ -26,13 +26,21 @@ public class JsonWrapper implements Serializable {
     private int code;
     private String msg;
 
+    /**
+     * 数据
+     */
     private Object data;
+    
+    /**
+     * 若data为分页数据列表，则返回page
+     */
+    private Page page;
 
     /**
      * 默认成功
      */
     public JsonWrapper() {
-    	this(ErrorCode.SUCCESS, null);
+    	this(ErrorCode.SUCCESS);
     }
     
     /**
@@ -49,6 +57,16 @@ public class JsonWrapper implements Serializable {
 	public JsonWrapper(ErrorCode errorCode, Object data) {
 		this(errorCode.getErrorCode(), errorCode.getErrorMsg(), data);
 	}
+	
+	/**
+	 * 非分页数据构造器
+	 * @param code
+	 * @param msg
+	 * @param data
+	 */
+	public JsonWrapper(int code, String msg, Object data) {
+		this(code, msg, data, null);
+	}
 
 	/**
 	 * 完全构造器
@@ -57,7 +75,7 @@ public class JsonWrapper implements Serializable {
 	 * @param errorCode
 	 * @param data
 	 */
-	public JsonWrapper(int code, String msg, Object data) {
+	public JsonWrapper(int code, String msg, Object data, Page page) {
 		super();
 		this.code = code;
 		this.msg = msg;
@@ -120,6 +138,19 @@ public class JsonWrapper implements Serializable {
 	 */
 	public void setData(Object data) {
 		this.data = data;
+	}
+
+	/**
+	 * 为null不序列化
+	 * @return the data
+	 */
+	@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+	public Page getPage() {
+		return page;
+	}
+
+	public void setPage(Page page) {
+		this.page = page;
 	}
 
 }

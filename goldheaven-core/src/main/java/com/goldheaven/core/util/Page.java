@@ -2,6 +2,8 @@ package com.goldheaven.core.util;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 /**
  * 
  * <p>
@@ -24,7 +26,7 @@ public class Page implements Serializable {
 	/**
 	 * 共多少条记录
 	 */
-	private int recordCount = 0;
+	private int total = 0;
 	
 	/**
 	 * 共几页
@@ -55,11 +57,10 @@ public class Page implements Serializable {
 	 * @param pageCount
 	 * @param pageNo
 	 */
-	public Page(int pageSize, int recordCount, int pageCount, int page) {
+	public Page(int pageSize, int total, int page) {
 		super();
 		this.pageSize = pageSize;
-		this.recordCount = recordCount;
-		this.pageCount = pageCount;
+		this.total = total;
 		this.page = page;
 	}
 
@@ -84,18 +85,18 @@ public class Page implements Serializable {
 	 * 获取总记录数
 	 * @return
 	 */
-	public int getRecordCount() {
-		return recordCount;
+	public int getTotal() {
+		return total;
 	}
 
 	/**
-	 * 共多少条记录数
-	 * @param recordCount
+	 * 设置总记录数
+	 * @param total
 	 */
-	public void setRecordCount(int recordCount) {
-		this.recordCount = recordCount;
+	public void setTotal(int total) {
+		this.total = total;
 	}
-
+	
 	/**
 	 * 获取总页数 最小值为1
 	 * @return
@@ -103,11 +104,11 @@ public class Page implements Serializable {
 	public int getPageCount() {
 		
 		// 根据总页数，获取总页数 
-		if (this.recordCount > 0) {
-			if (recordCount % pageSize == 0) {
-				this.pageCount = recordCount / pageSize;
+		if (this.total > 0) {
+			if (total % pageSize == 0) {
+				this.pageCount = total / pageSize;
 			} else {
-				this.pageCount = recordCount / pageSize + 1;
+				this.pageCount = total / pageSize + 1;
 			}
 		} else {
 			this.pageCount = 1;
@@ -150,6 +151,7 @@ public class Page implements Serializable {
 	 * 当前页面第一行
 	 * @return
 	 */
+	@JsonIgnore
 	public int getFirstRow() {
 		return (this.getPage() - 1) * this.getPageSize();
 	}
@@ -158,6 +160,7 @@ public class Page implements Serializable {
 	 * 下一页第一行
 	 * @return
 	 */
+	@JsonIgnore
 	public int getEndRow() {
 		return this.getPage() * this.getPageSize() + 1;
 	}
