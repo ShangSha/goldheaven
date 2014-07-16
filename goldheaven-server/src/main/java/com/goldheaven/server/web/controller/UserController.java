@@ -13,6 +13,7 @@ package com.goldheaven.server.web.controller;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,6 +39,26 @@ public class UserController {
 
 	@Autowired
 	private IUserService userService;
+	
+	@ResponseBody
+	@RequestMapping(value = "getUser/{userId}")
+	public JsonWrapper getUserByUserId(@PathVariable Long userId) {
+		JsonWrapper json = new JsonWrapper();
+		
+		try {
+			UserInfo user = userService.getUserById(userId);
+			json.setData(user);
+			
+			if(user == null) {
+				json.setErrorCode(ErrorCode.USER_NOTEXIST);
+			}
+		} catch (Exception e) {
+			json.setErrorCode(ErrorCode.ERROR);
+			LOG.error("Get user " + userId + "'s info exception. Cause by " + e.toString());
+		}
+		
+		return null;
+	}
 	
 	@ResponseBody
 	@RequestMapping(value = "save")
