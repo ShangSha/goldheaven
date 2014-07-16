@@ -1,7 +1,15 @@
 package com.goldheaven.manage.web.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.goldheaven.core.entity.ConvertRecordInfo;
+import com.goldheaven.core.service.IConvertRecordService;
+import com.goldheaven.manage.web.vo.EasyUIVo;
 
 /** 
  * <p>
@@ -13,7 +21,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * </p>
  */
 @Controller
-@RequestMapping("/convert")
+@RequestMapping("convert")
 public class ConvertRecordController {
+	
+	@Autowired
+	private IConvertRecordService convertRecordService;
+	
+	@ResponseBody
+	@RequestMapping(value = "list")
+	public EasyUIVo<ConvertRecordInfo> list() {
+		List<ConvertRecordInfo> list = convertRecordService.getConvertRecordListByParam();
+		int total = convertRecordService.getConvertRecordNumByParam();
+		return new EasyUIVo<ConvertRecordInfo>(list, total);
+	}
 
 }
