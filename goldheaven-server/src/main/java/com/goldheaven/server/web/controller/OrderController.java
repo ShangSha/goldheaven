@@ -10,11 +10,15 @@
  
 package com.goldheaven.server.web.controller;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.goldheaven.core.constants.enums.ErrorCode;
 import com.goldheaven.core.entity.OrderInfo;
+import com.goldheaven.core.service.IOrderService;
 import com.goldheaven.core.util.JsonWrapper;
 
 /** 
@@ -31,6 +35,11 @@ import com.goldheaven.core.util.JsonWrapper;
 @RequestMapping("order")
 public class OrderController {
 	
+	private static final Logger LOG = Logger.getLogger(OrderController.class);
+	
+	@Autowired
+	private IOrderService orderService;
+	
 	/**
 	 * 创建订单
 	 * @param order
@@ -38,7 +47,20 @@ public class OrderController {
 	 */
 	@RequestMapping(value = "create")
 	public @ResponseBody JsonWrapper createOrder(OrderInfo order) {
-		return null;
+		JsonWrapper json = new JsonWrapper();
+		try {
+			int result = orderService.saveOrder(order);
+			
+			if(result == 0) {
+				json.setErrorCode(ErrorCode.ORDER_EXIST);
+			} else if(result == 2) {
+				json.setErrorCode(ErrorCode.ERROR);
+			}
+		} catch (Exception e) {
+			json.setErrorCode(ErrorCode.ERROR);
+			LOG.error("Create " + order + " exception. Cause by " + e.toString());
+		}
+		return json;
 	}
 
 }

@@ -47,8 +47,7 @@ public class UserAccountController {
 	 */
 	@RequestMapping(value = "getAccount/{userId}")
 	public @ResponseBody JsonWrapper getUserAccountByUserId(@PathVariable Long userId) {
-		// 默认成功
-		JsonWrapper json = new JsonWrapper();
+		JsonWrapper json = new JsonWrapper(); // 默认成功
 
 		try {
 			UserAccountInfo userAccount = userAccountService.getUserAccountByUserId(userId);
@@ -61,7 +60,6 @@ public class UserAccountController {
 			json.setErrorCode(ErrorCode.ERROR);
 			LOG.error("Get user [" + userId + "]'s account exception. Cause by " + e.toString());
 		}
-		
 		return json;
 	}
 	

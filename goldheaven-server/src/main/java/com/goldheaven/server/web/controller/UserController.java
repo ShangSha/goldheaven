@@ -56,16 +56,13 @@ public class UserController {
 			json.setErrorCode(ErrorCode.ERROR);
 			LOG.error("Get user " + userId + "'s info exception. Cause by " + e.toString());
 		}
-		
-		return null;
+		return json;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "save")
 	public JsonWrapper saveUser(UserInfo user) {
-		
-		// 默认成功
-		ErrorCode errorCode = ErrorCode.SUCCESS;
+		ErrorCode errorCode = ErrorCode.SUCCESS; // 默认成功
 		
 		try {
 			if(!userService.saveUser(user)) {
@@ -76,16 +73,13 @@ public class UserController {
 			errorCode = ErrorCode.ERROR;
 			LOG.error("Save " + user.toString() + " exception. Cause by " + e.toString());
 		}
-		
 		return new JsonWrapper(errorCode);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "update")
 	public JsonWrapper updateUser(UserInfo user) {
-		
-		// 默认成功
-		ErrorCode errorCode = ErrorCode.SUCCESS;
+		ErrorCode errorCode = ErrorCode.SUCCESS; // 默认成功
 		
 		try {
 			if(!userService.updateUser(user)) {
@@ -96,7 +90,6 @@ public class UserController {
 			errorCode = ErrorCode.ERROR;
 			LOG.error("Update " + user.toString() + " exception. Cause by " + e.toString());
 		}
-		
 		return new JsonWrapper(errorCode);
 	}
 	
