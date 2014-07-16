@@ -29,5 +29,12 @@ public interface IConvertRecordDao {
 	 * @return
 	 */
 	Integer getConvertRecordNumByParam();
+	
+	/**
+	 * 保存兑换记录
+	 * @param convertRecord
+	 * @return
+	 */
+	Integer saveConvertRecord(ConvertRecordInfo convertRecord);
 
 }
