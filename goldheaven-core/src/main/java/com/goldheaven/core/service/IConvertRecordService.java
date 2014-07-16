@@ -27,5 +27,11 @@ public interface IConvertRecordService {
 	 * @return
 	 */
 	Integer getConvertRecordNumByParam();
+	
+	/**
+	 * 保存用户记录
+	 * @return
+	 */
+	boolean saveConvertRecord(ConvertRecordInfo convertRecord);
 
 }
