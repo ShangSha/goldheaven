@@ -1,5 +1,7 @@
 package com.goldheaven.core.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -26,10 +28,29 @@ public interface IOrderDao {
 	Integer isOrderExist(@Param("orderId")String orderId, @Param("channelId")Integer channelId);
 	
 	/**
+	 * 多条件查询订单列表
+	 * @return
+	 */
+	List<OrderInfo> getOrderListByParam();
+	
+	/**
+	 * 多条件查询订单总数
+	 * @return
+	 */
+	Integer getOrderNumByParam();
+	
+	/**
 	 * 保存订单
 	 * @param order
 	 * @return
 	 */
 	Integer saveOrder(OrderInfo order);
+	
+	/**
+	 * 通过ID删除订单
+	 * @param id
+	 * @return
+	 */
+	Integer deleteOrder(Long id);
 	
 }

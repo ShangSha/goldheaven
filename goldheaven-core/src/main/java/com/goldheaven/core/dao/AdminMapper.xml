@@ -3,24 +3,24 @@
 <mapper namespace="com.goldheaven.core.dao.IAdminDao">
 
 	<select id="getUserByNameAndPW" resultType="AdminInfo">
-		select * from admin where userName = #{userName} and passWord = #{passWord}
+		select * from admin_info where userName = #{userName} and passWord = #{passWord}
 	</select>
 	
 	<select id="getAdminList" resultType="AdminInfo">
-	    select * from admin limit #{fristRow}, #{endRow}
+	    select * from admin_info limit #{fristRow}, #{endRow}
 	</select>
 	
 	<select id="getAdminNum" resultType="int">
-	    select count(id) from admin
+	    select count(id) from admin_info
 	</select>
 	
 	<insert id="saveAdmin">
-	    insert into admin (userName, passWord, createTime)
+	    insert into admin_info (userName, passWord, createTime)
 	    values (#{userName}, #{passWord}, #{createTime})
 	</insert>
 	
 	<delete id="deleteAdmin" parameterType="long">
-	    delete from admin where id = #{id}
+	    delete from admin_info where id = #{id}
 	</delete>
 
 </mapper>

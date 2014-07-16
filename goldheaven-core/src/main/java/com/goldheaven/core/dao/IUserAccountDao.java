@@ -2,6 +2,8 @@ package com.goldheaven.core.dao;
 
 import org.springframework.stereotype.Repository;
 
+import com.goldheaven.core.entity.UserAccountInfo;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -12,6 +14,12 @@ import org.springframework.stereotype.Repository;
  * </p>
  */
 @Repository
-public class IUserAccountDao {
+public interface IUserAccountDao {
+	
+	/**
+	 * 通过用户ID，获取用户账单
+	 * @return
+	 */
+	UserAccountInfo getUserAccountByUserId(Long userId);
 
 }

@@ -3,7 +3,19 @@
 <mapper namespace="com.goldheaven.core.dao.IOrderDao">
 
     <select id="isOrderExist" resultType="int" parameterType="java.lang.Long">
-		SELECT count(id) from order where orderId = #{orderId} and channelId = #{channelId}
+		select count(id) from order_info where orderId = #{orderId} and channelId = #{channelId}
 	</select>
+	
+	<select id="getOrderListByParam" resultType="OrderInfo">
+	    select * from order_info
+	</select>
+	
+	<select id="getOrderNumByParam" resultType="int">
+	    select count(id) from order_info
+	</select>
+	
+	<delete id="deleteOrder" parameterType="long">
+	    delete from order_info where id = #{id}
+	</delete>
 	
 </mapper>

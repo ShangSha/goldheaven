@@ -3,30 +3,30 @@
 <mapper namespace="com.goldheaven.core.dao.IUserDao">
 	
 	<select id="getUserById" resultType="UserInfo" parameterType="java.lang.Long">
-		SELECT * FROM USER WHERE ID = #{id}
+		select * from user_info where id = #{id}
 	</select>
 	
 	<select id="getUserListByParam" resultType="UserInfo">
-	    select * from user
+	    select * from user_info
 	</select>
 	
 	<select id="getUserNumByParam" resultType="int">
-	    select count(id) from user
+	    select count(id) from user_info
 	</select>
 	
 	<insert id="saveUser" parameterType="UserInfo">
-	    INSERT INTO USER (userName)
-	    VALUES (#{userName})
+	    insert into user_info (userName)
+	    values (#{userName})
 	</insert>
 	
 	<update id="updateUser" parameterType="UserInfo">
-	    update USER set
+	    update user_info set
 		userName = #{userName}
 		where id = #{id}
 	</update>
 	
 	<delete id="deleteUser" parameterType="java.lang.Long">
-	    DELETE FROM USER WHERE ID = ${id}
+	    delete from user_info where id = ${id}
 	</delete>
 	
 </mapper>
