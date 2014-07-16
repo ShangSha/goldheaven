@@ -100,7 +100,7 @@ function createFrame(url) {
 				</div>
 				<div title="订单中心">
 				   <ul>
-				     <li><div><a target="mainFrame" href="admin/adminlist.jsp" ><span class="icon icon-nav" ></span>订单管理</a></div></li>
+				     <li><div><a target="mainFrame" href="order/orderlist.jsp" ><span class="icon icon-nav" ></span>订单管理</a></div></li>
 				   </ul>
 				</div>
 				<div title="审计中心">
@@ -110,6 +110,7 @@ function createFrame(url) {
 				</div>
 				<div title="系统管理" >
 				   <ul>
+				     <li><div><a target="mainFrame" href="version/versionlist.jsp" ><span class="icon icon-nav" ></span>版本更新管理</a></div></li>
 				     <li><div><a target="mainFrame" href="admin/adminlist.jsp" ><span class="icon icon-nav" ></span>管理员用户管理</a></div></li>
 				     <li><div><a target="mainFrame" href="admin/adminlist.jsp" ><span class="icon icon-log" ></span>系统日志</a></div></li>
 				   </ul>
