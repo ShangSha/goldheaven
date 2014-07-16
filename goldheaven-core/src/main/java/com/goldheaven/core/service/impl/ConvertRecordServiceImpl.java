@@ -1,11 +1,14 @@
 package com.goldheaven.core.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.goldheaven.core.constants.enums.ConvertStatusEnum;
 import com.goldheaven.core.dao.IConvertRecordDao;
 import com.goldheaven.core.entity.ConvertRecordInfo;
 import com.goldheaven.core.service.IConvertRecordService;
@@ -24,6 +27,8 @@ import com.goldheaven.core.service.IConvertRecordService;
 @Service("convertRecordService")
 public class ConvertRecordServiceImpl implements IConvertRecordService {
 	
+	private static final Logger LOG = Logger.getLogger(ConvertRecordServiceImpl.class);
+	
 	@Autowired
 	private IConvertRecordDao convertRecordDao;
 
@@ -35,6 +40,14 @@ public class ConvertRecordServiceImpl implements IConvertRecordService {
 	@Override
 	public Integer getConvertRecordNumByParam() {
 		return convertRecordDao.getConvertRecordNumByParam();
+	}
+	
+	@Override
+	public boolean saveConvertRecord(ConvertRecordInfo convertRecord) {
+		convertRecord.setConvertTime(new Date()); // 兑换时间
+		convertRecord.setStatus(ConvertStatusEnum.UN_AUDITED.getStatus()); // 默认未审核
+		LOG.info("Save " + convertRecord);
+		return convertRecordDao.saveConvertRecord(convertRecord) > 0;
 	}
 
 }
