@@ -1,8 +1,11 @@
 package com.goldheaven.core.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.goldheaven.core.dao.IUserAccountDao;
+import com.goldheaven.core.entity.UserAccountInfo;
 import com.goldheaven.core.service.IUserAccountService;
 
 /** 
@@ -18,5 +21,13 @@ import com.goldheaven.core.service.IUserAccountService;
 @Transactional
 @Service("userAccountService")
 public class UserAccountServiceImpl implements IUserAccountService {
+	
+	@Autowired
+	private IUserAccountDao userAccountDao;
+
+	@Override
+	public UserAccountInfo getUserAccountByUserId(Long userId) {
+		return userAccountDao.getUserAccountByUserId(userId);
+	}
 	
 }

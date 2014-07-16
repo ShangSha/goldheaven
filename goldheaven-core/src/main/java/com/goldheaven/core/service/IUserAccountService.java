@@ -1,5 +1,7 @@
 package com.goldheaven.core.service;
 
+import com.goldheaven.core.entity.UserAccountInfo;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -11,5 +13,12 @@ package com.goldheaven.core.service;
  */
 
 public interface IUserAccountService {
+	
+	/**
+	 * 通过用户ID获取用户账单
+	 * @param userId
+	 * @return
+	 */
+	UserAccountInfo getUserAccountByUserId(Long userId);
 
 }

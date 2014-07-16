@@ -1,5 +1,9 @@
 package com.goldheaven.core.service;
 
+import java.util.List;
+
+import com.goldheaven.core.entity.ConvertRecordInfo;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -11,5 +15,17 @@ package com.goldheaven.core.service;
  */
 
 public interface IConvertRecordService {
+	
+	/**
+	 * 兑换记录多条件查询
+	 * @return
+	 */
+	List<ConvertRecordInfo> getConvertRecordListByParam();
+	
+	/**
+	 * 兑换记录总数（多条件）
+	 * @return
+	 */
+	Integer getConvertRecordNumByParam();
 
 }

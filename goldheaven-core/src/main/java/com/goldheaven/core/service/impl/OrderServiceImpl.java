@@ -1,5 +1,7 @@
 package com.goldheaven.core.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +36,21 @@ public class OrderServiceImpl implements IOrderService {
 		}
 		
 		return orderDao.saveOrder(order) > 0 ? 1 : 2;
+	}
+
+	@Override
+	public List<OrderInfo> getOrderListByParam() {
+		return orderDao.getOrderListByParam();
+	}
+
+	@Override
+	public Integer getOrderNumByParam() {
+		return orderDao.getOrderNumByParam();
+	}
+
+	@Override
+	public boolean deleteOrder(Long id) {
+		return orderDao.deleteOrder(id) > 0;
 	}
 
 }
