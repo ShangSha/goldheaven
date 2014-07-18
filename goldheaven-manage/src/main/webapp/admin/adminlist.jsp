@@ -129,7 +129,7 @@ function update(id){
 		    		 closeUpdateUser();
 		    		 msgShow('系统提示', "修改成功！", 'warning',function(){$('#userList').datagrid('reload');});
 		    	 }else{
-		    		 msgShow('系统提示', "添加失败！", 'warning');	  
+		    		 msgShow('系统提示', "添加失败！", 'warning');
 		    	 }
 		    }   
 		 }); 
