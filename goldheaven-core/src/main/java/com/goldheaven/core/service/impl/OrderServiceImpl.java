@@ -53,4 +53,9 @@ public class OrderServiceImpl implements IOrderService {
 		return orderDao.deleteOrder(id) > 0;
 	}
 
+	@Override
+	public Integer countGoldcoinsByUserId(Long userId) {
+		return orderDao.countGoldcoinsByUserId(userId);
+	}
+
 }
