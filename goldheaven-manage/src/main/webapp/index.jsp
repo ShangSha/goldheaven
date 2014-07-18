@@ -50,14 +50,14 @@ function createFrame(url) {
 	<div class="easyui-layout" style="width: 100%; height: 100%;">
 	    <!-- 头部  -->
 		<div data-options="region:'north'" style="height: 60px;">
-		  <span style="float:right; padding-right:20px;">欢迎 admin 
+		  <span style="float:right; padding-right:20px; margin: auto;">欢迎 admin 
 		    <a href="#" id="editpass">修改密码</a> 
 		    <a href="#" id="loginOut">安全退出</a>
 		  </span>
 		</div>
 		<!-- 尾部 -->
 		<div data-options="region:'south',split:true" style="height: 30px; background: #D2E0F2; ">
-           <div class="footer"></div>
+           <div class="footer">Copyright © zhenqiangli_prince@163.com</div>
         </div>
 		<!-- 左侧 -->
 		<div data-options="region:'west',split:true" title="系统主菜单" style="width: 180px;">
