@@ -23,9 +23,14 @@ public class ConvertRecordInfo implements Serializable {
 	private Long id;
 	
 	/**
+	 * 账户余额
+	 */
+	private Integer balance;
+	
+	/**
 	 * 兑换积分
 	 */
-	private Long convertGoldcoin;
+	private Integer convertGoldcoin;
 	
 	/**
 	 * 兑换方式
@@ -97,16 +102,30 @@ public class ConvertRecordInfo implements Serializable {
 	}
 
 	/**
+	 * @return the balance
+	 */
+	public Integer getBalance() {
+		return balance;
+	}
+
+	/**
+	 * @param balance the balance to set
+	 */
+	public void setBalance(Integer balance) {
+		this.balance = balance;
+	}
+
+	/**
 	 * @return the convertGoldcoin
 	 */
-	public Long getConvertGoldcoin() {
+	public Integer getConvertGoldcoin() {
 		return convertGoldcoin;
 	}
 
 	/**
 	 * @param convertGoldcoin the convertGoldcoin to set
 	 */
-	public void setConvertGoldcoin(Long convertGoldcoin) {
+	public void setConvertGoldcoin(Integer convertGoldcoin) {
 		this.convertGoldcoin = convertGoldcoin;
 	}
 
@@ -196,10 +215,11 @@ public class ConvertRecordInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ConvertRecordInfo [id=" + id + ", convertGoldcoin=" + convertGoldcoin 
-				+ ", convertType=" + convertType + ", convertMoney=" + convertMoney 
-				+ ", convertTime=" + convertTime + ", status=" + status + ", reviewTime="
-				+ reviewTime + ", userId=" + userId + "]";
+		return "ConvertRecordInfo [id=" + id + ", balance=" + balance
+				+ ", convertGoldcoin=" + convertGoldcoin + ", convertType="
+				+ convertType + ", convertMoney=" + convertMoney
+				+ ", convertTime=" + convertTime + ", status=" + status
+				+ ", reviewTime=" + reviewTime + ", userId=" + userId + "]";
 	}
 	
 }
