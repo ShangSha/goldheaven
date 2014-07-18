@@ -5,5 +5,13 @@
    <select id="getUserAccountByUserId" resultType="UserAccountInfo" parameterType="long">
        select * from user_account_info where userId = #{userId}
    </select>
+   
+   <select id="getUserAccountListByParam" resultType="UserAccountInfo">
+       select * from user_account_info
+   </select>
+   
+   <select id="getUserAccountNumByParam" resultType="int">
+       select count(id) from user_account_info
+   </select>
 	
 </mapper>

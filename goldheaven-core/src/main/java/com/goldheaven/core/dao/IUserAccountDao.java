@@ -1,5 +1,7 @@
 package com.goldheaven.core.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.goldheaven.core.entity.UserAccountInfo;
@@ -21,5 +23,17 @@ public interface IUserAccountDao {
 	 * @return
 	 */
 	UserAccountInfo getUserAccountByUserId(Long userId);
+	
+	/**
+	 * 多条件查询用户账单列表（分页）
+	 * @return
+	 */
+	List<UserAccountInfo> getUserAccountListByParam();
+	
+	/**
+	 * 多条件查询用户账单总数
+	 * @return
+	 */
+	Integer getUserAccountNumByParam();
 
 }
