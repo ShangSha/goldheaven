@@ -53,4 +53,11 @@ public interface IOrderDao {
 	 */
 	Integer deleteOrder(Long id);
 	
+	/**
+	 * 统计单个用户的总金币数量
+	 * @param userId
+	 * @return
+	 */
+	Integer countGoldcoinsByUserId(Long userId);
+	
 }

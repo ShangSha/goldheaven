@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.goldheaven.core.dao.IOrderDao">
 
-    <select id="isOrderExist" resultType="int" parameterType="java.lang.Long">
+    <select id="isOrderExist" resultType="int" parameterType="long">
 		select count(id) from order_info where orderId = #{orderId} and channelId = #{channelId}
 	</select>
 	
@@ -12,6 +12,10 @@
 	
 	<select id="getOrderNumByParam" resultType="int">
 	    select count(id) from order_info
+	</select>
+	
+	<select id="countGoldcoinsByUserId" resultType="int" parameterType="int">
+	    select sum(goldcoins) from order_info where userId = #{userId}
 	</select>
 	
 	<insert id="saveOrder" parameterType="OrderInfo">
