@@ -9,6 +9,8 @@
 	<import resource="applicationContext-dao.xml"/>
 	<import resource="applicationContext-service.xml"/>
 	
+	<import resource="applicationContext-jobs.xml"/>
+	
 	<!-- load property config-->
 	 <!-- 属性文件读入 -->
 
