@@ -5,6 +5,7 @@
 <title>后台用户管理</title>
 <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="../resources/easyui/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="../resources/css/default.css">
 
 <script type="text/javascript" src="../resources/easyui/jquery.min.js"></script>
 <script type="text/javascript" src="../resources/easyui/jquery.easyui.min.js"></script>
