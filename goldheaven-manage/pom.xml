@@ -57,6 +57,13 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<!-- quartz  -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>1.8.4</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
