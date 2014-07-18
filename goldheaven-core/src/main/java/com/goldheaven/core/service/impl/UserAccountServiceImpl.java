@@ -1,5 +1,7 @@
 package com.goldheaven.core.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +30,16 @@ public class UserAccountServiceImpl implements IUserAccountService {
 	@Override
 	public UserAccountInfo getUserAccountByUserId(Long userId) {
 		return userAccountDao.getUserAccountByUserId(userId);
+	}
+
+	@Override
+	public List<UserAccountInfo> getUserAccountListByParam() {
+		return userAccountDao.getUserAccountListByParam();
+	}
+
+	@Override
+	public Integer getUserAccountNumByParam() {
+		return userAccountDao.getUserAccountNumByParam();
 	}
 	
 }
