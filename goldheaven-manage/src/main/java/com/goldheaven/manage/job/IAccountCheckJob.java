@@ -22,7 +22,7 @@ import java.util.Date;
  * </p>
  */
 
-public interface AccountCheckJob {
+public interface IAccountCheckJob {
 	
 	/**
 	 * 对账（单个用户某天的账单）

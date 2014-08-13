@@ -14,7 +14,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
-import com.goldheaven.manage.job.AccountCheckJob;
+import com.goldheaven.manage.job.IAccountCheckJob;
 
 /** 
  * <p>
@@ -26,7 +26,7 @@ import com.goldheaven.manage.job.AccountCheckJob;
  * </p>
  */
 @Component("accountCheckJob")
-public class AccountCheckJobImpl implements AccountCheckJob {
+public class AccountCheckJobImpl implements IAccountCheckJob {
 	
 	@Override
 	public void accountCheckUserByTime(Long userId, 
