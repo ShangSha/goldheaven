@@ -3,6 +3,8 @@ package com.goldheaven.core.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 /**
  * 
  * <p>
@@ -215,11 +217,7 @@ public class ConvertRecordInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ConvertRecordInfo [id=" + id + ", balance=" + balance
-				+ ", convertGoldcoin=" + convertGoldcoin + ", convertType="
-				+ convertType + ", convertMoney=" + convertMoney
-				+ ", convertTime=" + convertTime + ", status=" + status
-				+ ", reviewTime=" + reviewTime + ", userId=" + userId + "]";
+		return ToStringBuilder.reflectionToString(this);
 	}
 	
 }

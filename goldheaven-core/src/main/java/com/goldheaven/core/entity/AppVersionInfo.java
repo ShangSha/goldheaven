@@ -13,6 +13,8 @@ package com.goldheaven.core.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -184,8 +186,7 @@ public class AppVersionInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "AppVersionInfo [id=" + id + ", name=" + name + ", type=" + type + ", content=" 
-	        + content + ", url=" + url + ", pubTime=" + pubTime + ", status=" + status + "]";
+		return ToStringBuilder.reflectionToString(this);
 	}
 	
 	

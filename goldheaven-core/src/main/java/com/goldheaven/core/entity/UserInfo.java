@@ -3,6 +3,8 @@ package com.goldheaven.core.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 /**
  * 
  * <p>
@@ -109,8 +111,7 @@ public class UserInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserInfo [id=" + id + ", userName=" + userName + ", telePhone=" + telePhone 
-				+ ", alipayAccount=" + alipayAccount + ", createTime=" + createTime + "]";
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }

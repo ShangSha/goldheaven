@@ -3,6 +3,8 @@ package com.goldheaven.core.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 /**
  * 
  * <p>
@@ -56,6 +58,11 @@ public class OrderInfo implements Serializable {
 	 * 用户ID
 	 */
 	private Long userId;
+	
+	/**
+	 * 用户名
+	 */
+	private String userName;
 
 	@Override
 	public int hashCode() {
@@ -86,6 +93,11 @@ public class OrderInfo implements Serializable {
 		} else if (!orderId.equals(other.orderId))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 	/**
@@ -200,12 +212,18 @@ public class OrderInfo implements Serializable {
 		this.userId = userId;
 	}
 
-	@Override
-	public String toString() {
-		return "OrderInfo [id=" + id + ", orderId=" + orderId + ", adName="
-				+ adName + ", channelId=" + channelId + ", goldcoins="
-				+ goldcoins + ", deviceId=" + deviceId + ", time=" + time
-				+ ", userId=" + userId + "]";
+	/**
+	 * @return the userName
+	 */
+	public String getUserName() {
+		return userName;
+	}
+
+	/**
+	 * @param userName the userName to set
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 }

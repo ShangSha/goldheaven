@@ -2,6 +2,8 @@ package com.goldheaven.core.entity;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 /**
  * 
  * <p>
@@ -138,9 +140,7 @@ public class UserAccountInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserAccountInfo [id=" + id + ", totalGoldcoin=" + totalGoldcoin
-				+ ", freeGoldcoin=" + freeGoldcoin + ", paidMoney=" + paidMoney
-				+ ", userId=" + userId + "]";
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }

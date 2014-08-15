@@ -13,6 +13,8 @@ package com.goldheaven.core.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 /** 
  * <p>
  * ************************************************************** 
@@ -130,7 +132,7 @@ public class AdminInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "AdminInfo [id=" + id + ", userName=" + userName + ", createTime=" + createTime + "]";
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }
