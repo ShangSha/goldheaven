@@ -42,6 +42,11 @@ public class AppVersionInfo implements Serializable {
 	private Integer type;
 	
 	/**
+	 * 内部版本号
+	 */
+	private Long versionNo;
+	
+	/**
 	 * 更新内容
 	 */
 	private String content;
@@ -86,6 +91,11 @@ public class AppVersionInfo implements Serializable {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+
 	/**
 	 * @return the id
 	 */
@@ -126,6 +136,20 @@ public class AppVersionInfo implements Serializable {
 	 */
 	public void setType(Integer type) {
 		this.type = type;
+	}
+
+	/**
+	 * @return the versionNo
+	 */
+	public Long getVersionNo() {
+		return versionNo;
+	}
+
+	/**
+	 * @param versionNo the versionNo to set
+	 */
+	public void setVersionNo(Long versionNo) {
+		this.versionNo = versionNo;
 	}
 
 	/**
@@ -183,12 +207,5 @@ public class AppVersionInfo implements Serializable {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
-	}
 	
-	
-
 }
