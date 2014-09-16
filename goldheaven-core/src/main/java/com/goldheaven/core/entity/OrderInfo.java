@@ -45,14 +45,19 @@ public class OrderInfo implements Serializable {
 	private Integer goldcoins;
 	
 	/**
+	 * 订单创建时间
+	 */
+	private Date time;
+	
+	/**
 	 * 设备ID
 	 */
 	private String deviceId;
 	
 	/**
-	 * 订单创建时间
+	 * IP
 	 */
-	private Date time;
+	private String ip;
 	
 	/**
 	 * 用户ID
@@ -171,6 +176,20 @@ public class OrderInfo implements Serializable {
 	}
 
 	/**
+	 * @return the time
+	 */
+	public Date getTime() {
+		return time;
+	}
+
+	/**
+	 * @param time the time to set
+	 */
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	/**
 	 * @return the deviceId
 	 */
 	public String getDeviceId() {
@@ -185,17 +204,17 @@ public class OrderInfo implements Serializable {
 	}
 
 	/**
-	 * @return the time
+	 * @return the ip
 	 */
-	public Date getTime() {
-		return time;
+	public String getIp() {
+		return ip;
 	}
 
 	/**
-	 * @param time the time to set
+	 * @param ip the ip to set
 	 */
-	public void setTime(Date time) {
-		this.time = time;
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 
 	/**
@@ -225,5 +244,5 @@ public class OrderInfo implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+
 }
