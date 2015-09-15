@@ -1,6 +1,0 @@
-#surefire
-#Wed Jul 02 18:26:54 CST 2014
-spring.profiles.active=development
-user.dir=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server
-localRepository=C\:\\Users\\xiu\\.m2\\repository
-basedir=D\:\\DevRoot\\Source\\goldheaven\\goldheaven-server
